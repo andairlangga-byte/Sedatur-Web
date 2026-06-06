@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -5,25 +6,77 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SEDATUR Rawamangun</title>
 
+<!-- ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
 body{
 margin:0;
 font-family:system-ui, Arial;
-background:#f5f7fb;
-color:#111;
+background:#0f172a;
+color:#e5e7eb;
+scroll-behavior:smooth;
+}
+
+/* ANIMASI MASUK */
+.fade{
+opacity:0;
+transform:translateY(20px);
+animation:fadeIn 0.8s forwards;
+}
+
+@keyframes fadeIn{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* NAV */
+nav{
+position:sticky;
+top:0;
+background:#111827;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:10px;
+padding:12px;
+border-bottom:1px solid #1f2937;
+backdrop-filter: blur(10px);
+}
+
+nav a{
+color:#e5e7eb;
+text-decoration:none;
+padding:8px 12px;
+border-radius:10px;
+font-size:14px;
+transition:0.3s;
+}
+
+nav a:hover{
+background:#1a73e8;
+transform:scale(1.05);
 }
 
 /* HERO */
 .hero{
-background:linear-gradient(135deg,#1a73e8,#4f9cff);
-color:white;
-padding:60px 20px;
 text-align:center;
+padding:70px 20px;
+background:linear-gradient(135deg,#1a73e8,#0ea5e9);
+animation:fadeIn 1s ease;
 }
 
 .hero h1{
 margin:0;
-font-size:32px;
+font-size:34px;
+}
+
+.hero i{
+font-size:30px;
+margin-bottom:10px;
+display:block;
 }
 
 /* CONTAINER */
@@ -35,18 +88,44 @@ padding:20px;
 
 /* CARD */
 .card{
-background:white;
+background:#111827;
 padding:20px;
 border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
 margin-bottom:20px;
+border:1px solid #1f2937;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+transition:0.3s;
+animation:fadeIn 0.6s ease;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 15px 30px rgba(0,0,0,0.4);
 }
 
 /* GRID */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
 gap:15px;
+}
+
+.item{
+background:#0b1220;
+border-radius:12px;
+overflow:hidden;
+border:1px solid #1f2937;
+transition:0.3s;
+}
+
+.item:hover{
+transform:scale(1.05);
+}
+
+.item img{
+width:100%;
+height:160px;
+object-fit:cover;
 }
 
 /* BUTTON */
@@ -57,18 +136,18 @@ border:none;
 padding:10px 15px;
 border-radius:10px;
 cursor:pointer;
+transition:0.3s;
 }
 
 button:hover{
 background:#0f5bd3;
+transform:scale(1.05);
 }
 
-/* IFRAME DRIVE */
-iframe{
-width:100%;
-height:500px;
-border:0;
-border-radius:12px;
+/* ICON TEXT */
+.icon{
+margin-right:8px;
+color:#60a5fa;
 }
 </style>
 
@@ -76,46 +155,56 @@ border-radius:12px;
 
 <body>
 
+<!-- NAV -->
+<nav>
+<a href="#home"><i class="fa fa-house icon"></i>Home</a>
+<a href="#event"><i class="fa fa-bolt icon"></i>Event</a>
+<a href="#trip"><i class="fa fa-car icon"></i>Trip</a>
+<a href="#galeri"><i class="fa fa-image icon"></i>Galeri</a>
+<a href="#dukungan"><i class="fa fa-hand-holding-heart icon"></i>Dukungan</a>
+<a href="#changelog"><i class="fa fa-clipboard icon"></i>Update</a>
+</nav>
+
 <!-- HERO -->
-<div class="hero">
+<div class="hero fade">
+<i class="fa fa-users"></i>
 <h1>SEDATUR Rawamangun</h1>
 <p>Komunitas Anak Muda</p>
 </div>
 
 <div class="container">
 
-<!-- INTRO -->
-<div class="card">
-<h2>Selamat Datang</h2>
-<p>Website resmi SEDATUR dengan dokumentasi kegiatan, meme, dan video komunitas.</p>
-<button onclick="alert('Welcome SEDATUR!')">Join Sekarang</button>
-</div>
+<!-- HOME -->
+<section id="home" class="card fade">
+<h2><i class="fa fa-home icon"></i>Home</h2>
+<p>Isi deskripsi komunitas SEDATUR di sini.</p>
+<button>Join Sekarang</button>
+</section>
 
-<!-- FOTBAR -->
-<div class="card">
-<h2>📸 Dokumentasi Fotbar</h2>
-<iframe src="https://drive.google.com/embeddedfolderview?id=1NtZHoSZDHIC4Islng850sSOEp2HeSkMt#grid"></iframe>
-</div>
-
-<!-- VIDEO JJ -->
-<div class="card">
-<h2>🎬 Video JJ Sedatur</h2>
-<iframe src="https://drive.google.com/embeddedfolderview?id=1SP0qiWRx5ZagW9AmNc_wO4UD3SWXc2GU#grid"></iframe>
-</div>
-
-<!-- MEME -->
-<div class="card">
-<h2>😂 Meme Sedatur</h2>
-<iframe src="https://drive.google.com/embeddedfolderview?id=1NIOfbGa8okYtY-GHXfArePq2vRbQdJ_F#grid"></iframe>
-</div>
+<!-- EVENT -->
+<section id="event" class="card fade">
+<h2><i class="fa fa-bolt icon"></i>Event</h2>
+<p>Isi kegiatan / event komunitas di sini.</p>
+</section>
 
 <!-- TRIP -->
-<div class="card">
-<h2>🚗 Sedatur Trip</h2>
-<iframe src="https://drive.google.com/embeddedfolderview?id=1blBoDaakAzuj-HF0eo-LC4KQDeQANtDL#grid"></iframe>
+<section id="trip" class="card fade">
+<h2><i class="fa fa-car icon"></i>Sedatur Trip</h2>
+<p>Dokumentasi perjalanan komunitas.</p>
+</section>
+
+<!-- GALERI -->
+<section id="galeri" class="card fade">
+<h2><i class="fa fa-image icon"></i>Galeri</h2>
+
+<div class="grid">
+<div class="item"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"></div>
+<div class="item"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"></div>
+<div class="item"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644"></div>
+<div class="item"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac"></div>
 </div>
 
-</div>
+</section>
 
-</body>
-</html>
+<!-- DUKUNGAN -->
+<section id
