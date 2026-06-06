@@ -1,13 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SEDATUR Rawamangun</title>
-
-<!-- ICONS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 body{
@@ -16,20 +12,6 @@ font-family:system-ui, Arial;
 background:#0f172a;
 color:#e5e7eb;
 scroll-behavior:smooth;
-}
-
-/* ANIMASI MASUK */
-.fade{
-opacity:0;
-transform:translateY(20px);
-animation:fadeIn 0.8s forwards;
-}
-
-@keyframes fadeIn{
-to{
-opacity:1;
-transform:translateY(0);
-}
 }
 
 /* NAV */
@@ -43,21 +25,19 @@ flex-wrap:wrap;
 gap:10px;
 padding:12px;
 border-bottom:1px solid #1f2937;
-backdrop-filter: blur(10px);
+z-index:1000;
 }
 
 nav a{
 color:#e5e7eb;
 text-decoration:none;
 padding:8px 12px;
-border-radius:10px;
+border-radius:8px;
 font-size:14px;
-transition:0.3s;
 }
 
 nav a:hover{
 background:#1a73e8;
-transform:scale(1.05);
 }
 
 /* HERO */
@@ -65,21 +45,18 @@ transform:scale(1.05);
 text-align:center;
 padding:70px 20px;
 background:linear-gradient(135deg,#1a73e8,#0ea5e9);
-animation:fadeIn 1s ease;
 }
 
 .hero h1{
 margin:0;
-font-size:34px;
+font-size:36px;
 }
 
-.hero i{
-font-size:30px;
-margin-bottom:10px;
-display:block;
+.hero p{
+opacity:0.9;
 }
 
-/* CONTAINER */
+/* SECTION */
 .container{
 max-width:1000px;
 margin:auto;
@@ -94,13 +71,6 @@ border-radius:15px;
 margin-bottom:20px;
 border:1px solid #1f2937;
 box-shadow:0 10px 25px rgba(0,0,0,0.3);
-transition:0.3s;
-animation:fadeIn 0.6s ease;
-}
-
-.card:hover{
-transform:translateY(-5px);
-box-shadow:0 15px 30px rgba(0,0,0,0.4);
 }
 
 /* GRID */
@@ -110,22 +80,11 @@ grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
 gap:15px;
 }
 
-.item{
-background:#0b1220;
-border-radius:12px;
-overflow:hidden;
-border:1px solid #1f2937;
-transition:0.3s;
-}
-
-.item:hover{
-transform:scale(1.05);
-}
-
 .item img{
 width:100%;
 height:160px;
 object-fit:cover;
+border-radius:12px;
 }
 
 /* BUTTON */
@@ -136,18 +95,17 @@ border:none;
 padding:10px 15px;
 border-radius:10px;
 cursor:pointer;
-transition:0.3s;
 }
 
 button:hover{
 background:#0f5bd3;
-transform:scale(1.05);
 }
 
-/* ICON TEXT */
-.icon{
-margin-right:8px;
-color:#60a5fa;
+/* SECTION TITLE */
+h2{
+margin-top:0;
+border-left:4px solid #1a73e8;
+padding-left:10px;
 }
 </style>
 
@@ -157,17 +115,19 @@ color:#60a5fa;
 
 <!-- NAV -->
 <nav>
-<a href="#home"><i class="fa fa-house icon"></i>Home</a>
-<a href="#event"><i class="fa fa-bolt icon"></i>Event</a>
-<a href="#trip"><i class="fa fa-car icon"></i>Trip</a>
-<a href="#galeri"><i class="fa fa-image icon"></i>Galeri</a>
-<a href="#dukungan"><i class="fa fa-hand-holding-heart icon"></i>Dukungan</a>
-<a href="#changelog"><i class="fa fa-clipboard icon"></i>Update</a>
+<a href="#home">Home</a>
+<a href="#tentang">Tentang</a>
+<a href="#visi">Visi Misi</a>
+<a href="#kegiatan">Kegiatan</a>
+<a href="#event">Event</a>
+<a href="#trip">Trip</a>
+<a href="#galeri">Galeri</a>
+<a href="#dukungan">Dukungan</a>
+<a href="#changelog">Changelog</a>
 </nav>
 
 <!-- HERO -->
-<div class="hero fade">
-<i class="fa fa-users"></i>
+<div class="hero">
 <h1>SEDATUR Rawamangun</h1>
 <p>Komunitas Anak Muda</p>
 </div>
@@ -175,27 +135,45 @@ color:#60a5fa;
 <div class="container">
 
 <!-- HOME -->
-<section id="home" class="card fade">
-<h2><i class="fa fa-home icon"></i>Home</h2>
-<p>Isi deskripsi komunitas SEDATUR di sini.</p>
+<section id="home" class="card">
+<h2>Home</h2>
+<p>🟡 GANTI: Intro utama SEDATUR (kayak di Durable homepage).</p>
 <button>Join Sekarang</button>
 </section>
 
+<!-- TENTANG -->
+<section id="tentang" class="card">
+<h2>Tentang Kami</h2>
+<p>🟡 GANTI: penjelasan komunitas SEDATUR.</p>
+</section>
+
+<!-- VISI MISI -->
+<section id="visi" class="card">
+<h2>Visi & Misi</h2>
+<p>🟡 GANTI: visi dan misi komunitas.</p>
+</section>
+
+<!-- KEGIATAN -->
+<section id="kegiatan" class="card">
+<h2>Kegiatan</h2>
+<p>🟡 GANTI: kegiatan rutin komunitas.</p>
+</section>
+
 <!-- EVENT -->
-<section id="event" class="card fade">
-<h2><i class="fa fa-bolt icon"></i>Event</h2>
-<p>Isi kegiatan / event komunitas di sini.</p>
+<section id="event" class="card">
+<h2>Event</h2>
+<p>🟡 GANTI: event terbaru SEDATUR.</p>
 </section>
 
 <!-- TRIP -->
-<section id="trip" class="card fade">
-<h2><i class="fa fa-car icon"></i>Sedatur Trip</h2>
-<p>Dokumentasi perjalanan komunitas.</p>
+<section id="trip" class="card">
+<h2>Sedatur Trip</h2>
+<p>🟡 GANTI: dokumentasi perjalanan.</p>
 </section>
 
 <!-- GALERI -->
-<section id="galeri" class="card fade">
-<h2><i class="fa fa-image icon"></i>Galeri</h2>
+<section id="galeri" class="card">
+<h2>Galeri</h2>
 
 <div class="grid">
 <div class="item"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"></div>
@@ -207,4 +185,18 @@ color:#60a5fa;
 </section>
 
 <!-- DUKUNGAN -->
-<section id
+<section id="dukungan" class="card">
+<h2>Dukungan</h2>
+<p>🟡 GANTI: cara mendukung komunitas.</p>
+</section>
+
+<!-- CHANGELOG -->
+<section id="changelog" class="card">
+<h2>Changelog</h2>
+<p>🟡 GANTI: update perubahan website.</p>
+</section>
+
+</div>
+
+</body>
+</html>
